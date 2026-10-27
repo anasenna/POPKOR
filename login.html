@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#493537">
+  <meta name="description" content="Acesse o painel de gestão da POPKOR.">
+  <title>Entrar | POPKOR</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="login-page" data-page="login">
+  <a class="skip-link" href="#login-main">Pular para o formulário de acesso</a>
+  <main class="login-layout" id="login-main">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="login-brand" href="login.html" aria-label="POPKOR, tela de acesso">POP<span>KOR</span></a>
+      <div class="login-brand-rule" aria-hidden="true"></div>
+      <p class="eyebrow">GESTÃO DO SEU NEGÓCIO</p>
+      <h1 id="login-title">Bem-vinda de volta!</h1>
+      <p id="login-intro" class="login-intro">Entre para acessar suas vendas, seu estoque e o financeiro.</p>
+
+      <form id="login-form" novalidate>
+        <div class="login-field">
+          <label for="login-username">Usuário</label>
+          <input id="login-username" name="username" type="text" required minlength="3" maxlength="60" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Digite seu usuário">
+        </div>
+        <div class="login-field">
+          <label for="login-password">Senha</label>
+          <input id="login-password" name="password" type="password" required minlength="8" maxlength="128" autocomplete="current-password" placeholder="Digite sua senha" aria-describedby="password-hint">
+          <p id="password-hint" class="login-hint">Use pelo menos 8 caracteres.</p>
+        </div>
+        <div class="login-field" id="confirm-password-field" hidden>
+          <label for="login-confirm-password">Confirme sua senha</label>
+          <input id="login-confirm-password" name="confirmPassword" type="password" minlength="8" maxlength="128" autocomplete="new-password" placeholder="Digite a senha novamente" disabled>
+        </div>
+        <button class="login-show-password" type="button" id="toggle-password" aria-pressed="false">Mostrar senha</button>
+        <p id="login-error" class="login-error" role="alert" aria-live="assertive" hidden></p>
+        <button class="button login-submit" type="submit" id="login-submit">Entrar</button>
+      </form>
+
+      <p class="login-footer" id="login-footer">Acesso local do protótipo POPKOR.</p>
+      <p class="login-security-note">Este protótipo guarda o acesso neste navegador. Para proteger dados reais, será necessário autenticar em um servidor.</p>
+    </section>
+    <p class="login-copyright">POPKOR · Pipocaria Gourmet</p>
+  </main>
+</body>
+</html>

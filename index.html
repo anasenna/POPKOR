@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4b3738">
+  <title>Início | POPKOR</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js" defer></script><script src="js/app.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+  <main class="app-shell">
+    <header class="app-header"><div class="brand-line"><a class="brand" href="index.html" aria-label="POPKOR, página inicial">POPKOR</a><span class="page-caption">Painel de gestão</span></div><div class="status-line"><span id="today-label">Painel de hoje</span><div class="header-actions"><button type="button" class="text-button" id="open-settings">Personalizar</button><button type="button" class="text-button" id="logout-button">Sair</button></div></div></header>
+    <section id="main-content" class="page-content" tabindex="-1">
+      <div class="page-intro"><div><p class="eyebrow">RESUMO DA OPERAÇÃO</p><h1 id="greeting-title">Bom trabalho!</h1><p class="muted" id="greeting-subtitle">Aqui está o resumo da sua loja.</p></div></div>
+      <section class="metric-grid" aria-label="Indicadores do dia">
+        <article class="metric-card"><span class="metric-label">Vendas hoje</span><strong id="metric-sales">R$ 0,00</strong><span class="metric-note">Total de pedidos</span></article>
+        <article class="metric-card"><span class="metric-label">Recebido hoje</span><strong id="metric-received">R$ 0,00</strong><span class="metric-note">Vendas pagas</span></article>
+        <article class="metric-card"><span class="metric-label">Saldo no caixa</span><strong id="metric-cash">R$ 0,00</strong><span class="metric-note">Entradas menos saídas pagas</span></article>
+        <article class="metric-card"><span class="metric-label">A receber</span><strong id="metric-receivable">R$ 0,00</strong><span class="metric-note">Valores pendentes</span></article>
+        <article class="metric-card"><span class="metric-label">Entregas hoje</span><strong id="metric-deliveries">0</strong><span class="metric-note">Pedidos para entregar</span></article>
+        <article class="metric-card"><span class="metric-label">Estoque crítico</span><strong id="metric-critical">0 itens</strong><span class="metric-note">No mínimo ou abaixo dele</span></article>
+      </section>
+      <section class="panel goal-panel"><div class="section-heading"><h2>Meta diária de vendas</h2><strong id="goal-amount">R$ 0,00</strong></div><progress id="goal-progress" max="100" value="0" aria-label="Percentual da meta diária de vendas">0%</progress><p id="goal-description" class="goal-description">Configure uma meta na opção Personalizar.</p></section>
+      <section class="panel"><div class="section-heading"><h2>Vendas por canal</h2><a href="vendas.html">Abrir vendas <span aria-hidden="true">→</span></a></div><div id="channel-summary" class="channel-summary"></div></section>
+      <section class="panel"><div class="section-heading"><h2>Últimas vendas</h2><a href="vendas.html">Ver todas <span aria-hidden="true">→</span></a></div><div id="recent-sales" class="records-list"></div></section>
+      <section class="panel"><div class="section-heading"><h2>Estoque pedindo atenção</h2><a href="estoque.html">Gerenciar estoque <span aria-hidden="true">→</span></a></div><div id="critical-stock-preview" class="records-list"></div></section>
+      <p class="footnote">Seus registros são salvos neste navegador. Faça backups periódicos na página Financeiro.</p>
+    </section>
+    <nav class="bottom-nav" aria-label="Navegação principal"><a href="index.html" class="nav-link" data-nav="home" aria-current="page"><span aria-hidden="true">⌂</span><span>Início</span></a><a href="vendas.html" class="nav-link" data-nav="sales"><span aria-hidden="true">▤</span><span>Vendas</span></a><a href="estoque.html" class="nav-link" data-nav="stock"><span aria-hidden="true">▦</span><span>Estoque</span></a><a href="financeiro.html" class="nav-link" data-nav="finance"><span aria-hidden="true">＄</span><span>Financeiro</span></a></nav>
+  </main>
+  <dialog id="settings-dialog" class="modal"><form id="settings-form" method="dialog"><div class="modal-heading"><div><p class="eyebrow">PREFERÊNCIAS</p><h2>Personalizar painel</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Fechar">×</button></div><div class="form-grid"><label>Seu nome<input id="setting-name" name="name" maxlength="60" required></label><label>Nome da marca<input id="setting-brand" name="brand" maxlength="60" required></label><label class="full-span">Meta diária de vendas (R$)<input id="setting-goal" name="goal" type="number" min="0" step="0.01" required></label></div><div class="form-actions"><button type="button" class="button button-secondary" data-close-dialog>Cancelar</button><button class="button" type="submit">Salvar preferências</button></div></form></dialog>
+  <div id="live-message" class="live-message" role="status" aria-live="polite"></div>
+</body>
+</html>
